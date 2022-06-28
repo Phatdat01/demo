@@ -20,26 +20,26 @@ print(classify(text))
 #define negative or positive
 print(sentiment(text))
 
-# le = LabelEncoder()
-# words = ['anh', 'chị','em', 'cha', 'mẹ']
-# le.fit(words)
+le = LabelEncoder()
+words = ['anh', 'chị','em', 'cha', 'mẹ']
+le.fit(words)
 
-# print('Class of words: ', le.classes_)
-# # Convert to num
-# x = le.transform(words)
-# print('Convert to number: ', x)
-# # Convert to class
-# print('Invert into classes: ', le.inverse_transform(x))
+print('Class of words: ', le.classes_)
+# Convert to num
+x = le.transform(words)
+print('Convert to number: ', x)
+# Convert to class
+print('Invert into classes: ', le.inverse_transform(x))
 
-# #Onehot Processing
-# oh = OneHotEncoder()
-# classes_indices = list(zip(le.classes_, np.arange(len(le.classes_))))
-# print('Classes_indices: ', classes_indices)
-# oh.fit(classes_indices)
-# print('One-hot categories and indices:', oh.categories_)
-# # Biến đổi list words sang dạng one-hot
-# words_indices = list(zip(words, x))
-# print('Words and corresponding indices: ', words_indices)
-# one_hot = oh.transform(words_indices).toarray()
-# print('Transform words into one-hot matrices: \n', one_hot)
-# print('Inverse transform to categories from one-hot matrices: \n', oh.inverse_transform(one_hot))
+#Onehot Processing
+oh = OneHotEncoder()
+classes_indices = list(zip(le.classes_, np.arange(len(le.classes_))))
+print('Classes_indices: ', classes_indices)
+oh.fit(classes_indices)
+print('One-hot categories and indices:', oh.categories_)
+# Biến đổi list words sang dạng one-hot
+words_indices = list(zip(words, x))
+print('Words and corresponding indices: ', words_indices)
+one_hot = oh.transform(words_indices).toarray()
+print('Transform words into one-hot matrices: \n', one_hot)
+print('Inverse transform to categories from one-hot matrices: \n', oh.inverse_transform(one_hot))
